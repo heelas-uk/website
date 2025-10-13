@@ -1,0 +1,103 @@
+@media (prefers-color-scheme: dark) {
+  body,
+  body.dark-mode {
+    text-align: center;
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 354;
+    font-style: normal;
+    background-color: #220100;
+    color: #f7e7b6;
+  }
+}
+/* Manual dark mode toggle */
+body.dark-mode {
+    background-color: #0f0430;
+    color: #f7e7b6;
+}
+body{
+    text-align: center;
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 354;
+    font-style: normal;
+    background-color: #f7e7b6;
+    color: #220100;
+    ::selection {
+    background-color: #FE5F55;
+    color: #fff;
+}
+}
+
+/* Container styles */
+.container {
+    max-width: 500px;
+    margin: 4rem auto 0 auto;
+    background: rgba(255,255,255,0.85);
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 2.5rem 2rem 2rem 2rem;
+    text-align: center;
+    transition: background 0.3s;
+}
+body.dark-mode .container {
+    background: #271d45;
+}
+
+/* Headings and paragraphs */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+p {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+}
+
+/* Links */
+a {
+    color: #FE5F55;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+a:hover {
+    color: #d43c2d;
+    text-decoration: underline;
+}
+
+/* Parrot link container */
+.parrot-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.2rem;
+}
+
+/* Dark mode toggle button */
+#darkModeToggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    background: #FE5F55;
+    color: #fff;
+    border: none;
+    border-radius: 2rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: background 0.2s, color 0.2s;
+}
+#darkModeToggle:hover {
+    background: #d43c2d;
+}
+body.dark-mode #darkModeToggle {
+    background: #f7e7b6;
+    color: #220100;
+}
