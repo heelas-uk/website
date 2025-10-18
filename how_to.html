@@ -4,10 +4,10 @@
         <!-- Use UTF-8 and add mobile viewport -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>St Augustine's Hack Club</title>
         <link rel="stylesheet" href="style.css">
+        <title>How to - St Augustine's Hack Club</title>
         <link rel="icon" type="image/x-icon" href="https://assets.hackclub.com/icon-progress-rounded.svg">
-        <!-- Lightweight responsive helpers (no .container override so About uses Index padding) -->
+        <!-- Lightweight responsive helpers -->
         <style>
             img { max-width: 100%; height: auto; }
             body { margin: 0; }
@@ -17,7 +17,7 @@
             }
         </style>
         <script>
-      // Get cookie value by name
+             // Get cookie value by name
             function getCookie (name) {
                 let value = `; ${document.cookie}`;
                 let parts = value.split(`; ${name}=`);
@@ -34,47 +34,39 @@
         <a class="banner" href="https://hackclub.com/" aria-label="Hack Club home" target="_blank" rel="noopener">
             <img src="https://assets.hackclub.com/flag-orpheus-top.svg" alt="Hack Club">
         </a>
+
         <!-- Accent menu above main container -->
         <nav aria-label="Primary" style="display: flex; justify-content: center; gap: 1em; margin-top: 1em; margin-bottom: 1em;">
             <a href="index.html" style="padding: 0.5em 1.5em; border-radius: 6px; text-decoration: none; font-weight: 1000;">Home</a>
             <a href="about.html" aria-current="page" style="padding: 0.5em 1.5em; border-radius: 6px; text-decoration: none; font-weight: 1000;">About Us</a>
             <a href="how_to.html" aria-current="page" style="padding: 0.5em 1.5em; border-radius: 6px; text-decoration: none; font-weight: 1000;">Hackatime</a>
         </nav>
+
         <div class="container">
-            <h1>St Augustine's Hack Club</h1>
-            <h3>
-                What do we do?
-            </h3>
-            <p>
-                We are a club based out of IT1 that meets every Thursday lunch to build cool stuff. We make a mixture of hardware (robots, cookie cutters) and software (websites, games, apps). By hacking we don't mean breaking into stuff, we mean creating and building things and finding creative solutions to problems.
+            <h1>How to set up Hackatime</h1>
+            <p>Step 1: Log in to <a href="https://hackatime.hackclub.com/" target="_blank">hackatime.com</a> using your the email associated with your Hack Club account.</p>
+            <img src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/316b72b636affb3cfea10989dfbdb5e1d1fef2aa_image.png" alt="Hackatime login screen" style="border-radius: 0%;">
+            <p>Step 1a: If you are receiving the link to your email, <b>don't</b> click the button instead right-click and press copy link</p>
+            <img src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/544db39c45e3e2ce69404aefe592c6c458c2efb5_image.png" alt="Outlook press copy link address" style="border-radius: 0%;">
+            <p>Step 1b: Paste the link into your browser's address bar and press enter.</p>
+            <p>Step 2: Once logged in, click on your profile icon in the bottom left corner and select "Settings".</p>
+            <img src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/28ad9761812632ee080a56b2522385b4470bb12c_image.png" alt="Hackatime settings option" style="border-radius: 0%;">
+            <p>Step 3: In the settings menu select "Set up Time Tracking". <b>Note:</b> If you are using Github codespaces you will need to this every time you create a new space</p>
+            <img src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/4ff2e933a9c38cc842d524655028e2fe43b3d0de_image.png" alt="Hackatime set up time tracking option" style="border-radius: 0%;">
+            <p>Step 4: Now switch to your code editor of choice if you are in school that will need to be codespaces while out of school you can use whatever your heart desires 😁. <a href="https://wakatime.com/plugins" target="_blank">Search</a> for the code editor you are using and follow the instructions until you enter your API key. </p>
+            <img src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/db71137082f85c955ad609ddb27722c4d8709514_image.png" alt="Wakatime plugins page" style="border-radius: 0%;">
+            <p><i>I used word for this demo because I have free will.</i></p>
+            <p>Step 5: Navigate back to your Hackatime settings and copy your magic command then follow the instructions for your platform</p>
+            <p>Step 6: You can safely ignore points 2 and 3 of the websites guide this is becuase we have already dont it</p>
+            <p>Step 7: Get coding if you upload your code to github you can earn points for the club so we can buy snacks and drinks for our next club meeting</p>
+            <p>Oh and one more thing <b>fraud is bad,</b> this means <i>don't cheat the system</i> or you will be <b>banned</b> from participating in club activities and reported to the school. This is not our choice it is Hack Club's determination.</p>
 
-                <b>It is nothing near a normal lesson, not even close. We teach practical skills that are never on exams.</b>
-            </p>
-            
-            <h3>Who are Hack Club?</h3>
-            <p> 
-                Hack Club is a global not-for-profit 501(c)(3) that provides students like us with funding to run clubs, make projects, and attend events. They are funded by the likes of Github (Microsoft), Jack Dorsey (Twitter), and Elon Musk (SpaceX).
-            </p>
-            <h3>What's the catch?</h3>
-            <p>
-                There is no catch. However, some projects require you to publish the code you use, and of course, you must follow school rules and <a href="https://hackclub.com/conduct/" target="_blank">Hack Club's code of conduct</a>.
-            </p>
-            <h3>What's in it for me?</h3>
-            <p>
-                Hack Club offers several grant programs. To join, please fill out the form <a href="https://dashboard.hackclub.com/join-club?code=CXCPK04V" target="_blank">here using your school email (you can use @sta.cc to save time)</a>. You will be added to a dashboard where you can access resources and information about upcoming meetings.
-            </p>
-            <h3>I have a question!</h3>
-            <p>
-                No worries 😊 You can reach out to us by emailing <a href="mailto:sta@hackclub.uk">sta@hackclub.uk</a>, or you can come to IT during one of our sessions and we will be happy to answer your questions.
-            </p>
-            <h3>Who are you?</h3>
-            <p>You can learn more about the club leaders <a href="about.html">here</a>.</p>
-        </div>
 
-        <label id="theme" for="theme_toggler" aria-label="Toggle color theme">
+
+            <label id="theme" for="theme_toggler" aria-label="Toggle color theme">
             <input type="checkbox" id="theme_toggler" class="visuallyhidden">
-        </label>
-        <script>
+            </label>
+            <script>
             const toggler = document.querySelector('#theme_toggler');
             const media = window.matchMedia('(prefers-color-scheme: dark)');
             
