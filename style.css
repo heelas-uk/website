@@ -16,7 +16,6 @@ body.dark-mode {
     color: #f7e7b6;
 }
 body{
-    margin: 0; /* remove default browser margin so fixed banner can reach the corner */
     text-align: center;
     font-family: "Space Grotesk", sans-serif;
     font-optical-sizing: auto;
