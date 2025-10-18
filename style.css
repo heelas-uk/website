@@ -29,10 +29,44 @@ body{
 }
 }
 
+/* Ensure the viewport has no default margins so fixed elements can be flush with the corner */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* banner sizing and positioning (responsive) */
+:root {
+  /* banner size used for both banner width and container offset */
+  --banner-size: clamp(120px, 18vw, 320px);
+  --banner-offset: calc(var(--banner-size) + 1rem);
+}
+
+.banner {
+  position: fixed;
+  /* use safe-area insets when available so the banner isn't hidden on devices with notches */
+  top: env(safe-area-inset-top, 0);
+  left: env(safe-area-inset-left, 0);
+  width: var(--banner-size);
+  z-index: 9999; /* sit above other UI */
+  display: block;
+  text-decoration: none;
+  pointer-events: auto;
+  margin: 0;
+  padding: 0;
+}
+.banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 0;
+}
+
 /* Container styles */
 .container {
     max-width: 500px;
-    margin: 4rem auto 0 auto;
+    margin: var(--banner-offset) auto 0 auto;
     background: rgba(255,255,255,0.85);
     border-radius: 1.5rem;
     box-shadow: 0 4px 24px rgba(0,0,0,0.08);
