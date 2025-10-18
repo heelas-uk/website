@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
-        <!-- Lightweight responsive helpers (no .container override so About uses Index padding) -->
+        <!-- Lightweight responsive helpers -->
         <style>
             img { max-width: 100%; height: auto; }
             body { margin: 0; }
@@ -32,46 +32,41 @@
         <a class="banner" href="https://hackclub.com/" aria-label="Hack Club home" target="_blank" rel="noopener">
             <img src="https://assets.hackclub.com/flag-orpheus-top.svg" alt="Hack Club">
         </a>
+
         <!-- Accent menu above main container -->
         <nav aria-label="Primary" style="display: flex; justify-content: center; gap: 1em; margin-top: 1em; margin-bottom: 1em;">
-            <a href="index.html" aria-current="page" style="padding: 0.5em 1.5em; border-radius: 6px; text-decoration: none; font-weight: 1000;">Home</a>
-            <a href="about.html" style="padding: 0.5em 1.5em; border-radius: 6px; text-decoration: none; font-weight: 1000;">About Us</a>
+            <a href="index.html" style="padding: 0.5em 1.5em; border-radius: 6px; text-decoration: none; font-weight: 1000;">Home</a>
+            <a href="about.html" aria-current="page" style="padding: 0.5em 1.5em; border-radius: 6px; text-decoration: none; font-weight: 1000;">About Us</a>
         </nav>
+
         <div class="container">
-            <h1>St Augustine's Hack Club</h1>
-            <h3>
-                What do we do?
-            </h3>
-            <p>
-                We are a club based out of IT1 that meets every Thursday lunch to build cool stuff. We make a mixture of hardware (robots, cookie cutters) and software (websites, games, apps). By hacking we don't mean breaking into stuff, we mean creating and building things and finding creative solutions to problems.
+            <h1>About Us</h1>
+            <p>We are a group of Yr11 students who are working together with a goal to grow the interest of students in technology and programming especially outside of what is taught in the classroom.</p>
+            <p>Our club leaders are:</p>
+            <div class="leader">
+                <h3>Alfred Heelas</h3>
 
-                <b>It is nothing near a normal lesson, not even close. We teach practical skills that are never on exams.</b>
-            </p>
-            
-            <h3>Who are Hack Club?</h3>
-            <p> 
-                Hack Club is a global not-for-profit 501(c)(3) that provides students like us with funding to run clubs, make projects, and attend events. They are funded by the likes of Github (Microsoft), Jack Dorsey (Twitter), and Elon Musk (SpaceX).
-            </p>
-            <h3>What's the catch?</h3>
-            <p>
-                There is no catch. However, some projects require you to publish the code you use, and of course, you must follow school rules and <a href="https://hackclub.com/conduct/" target="_blank">Hack Club's code of conduct</a>.
-            </p>
-            <h3>What's in it for me?</h3>
-            <p>
-                Hack Club offers several grant programs. To join, please fill out the form <a href="https://dashboard.hackclub.com/join-club?code=CXCPK04V" target="_blank">here using your school email (you can use @sta.cc to save time)</a>. You will be added to a dashboard where you can access resources and information about upcoming meetings.
-            </p>
-            <h3>I have a question!</h3>
-            <p>
-                No worries 😊 You can reach out to us by emailing <a href="mailto:sta@hackclub.uk">sta@hackclub.uk</a>, or you can come to IT during one of our sessions and we will be happy to answer your questions.
-            </p>
-            <h3>Who are you?</h3>
-            <p>You can learn more about the club leaders <a href="about.html">here</a>.</p>
+                <p><i><a href="mailto:21heelasa@st-augustines.wilts.sch.uk?subject=Hack%20Club">21heelasa@sta.cc</a></i></p>
+                <a href="https://github.com/heelas-uk">
+                <img src="https://avatars.githubusercontent.com/u/180876265" alt="Alfred Heelas" width="150" height="150">
+                </a>
+                <h4>Club Leader (joint)</h4>
+                <p>Hi, I there I am Alfred I have coded for years and have a pretty broad knowledge of technology from hardware to software development. That being said I am by no means an expert - I am always looking to learn more by people who are more knowledgeable than me.</p>
+                <p>Outside of school, I am qualified as a glider pilot and enjoy flying in my free time.</p>
+
+                <h3>Jasmine Nash</h3>
+                <p><i><a href="mailto:21nashj@st-augustines.wilts.sch.uk?subject=Hack%20Club">21nashj@sta.cc</a></i></p>
+                <!-- PFP to go here with a link to something -->
+
+                <h4>Club Leader (joint)</h4>
+                <p>In school info to go here</p>
+                <p>Out of school info to go here</p>
+                <h3>Ivie?</h3>
         </div>
-
-        <label id="theme" for="theme_toggler" aria-label="Toggle color theme">
+            <label id="theme" for="theme_toggler" aria-label="Toggle color theme">
             <input type="checkbox" id="theme_toggler" class="visuallyhidden">
-        </label>
-        <script>
+            </label>
+            <script>
             const toggler = document.querySelector('#theme_toggler');
             const media = window.matchMedia('(prefers-color-scheme: dark)');
             
@@ -106,3 +101,4 @@
         </script>
     </body>
 </html>
+

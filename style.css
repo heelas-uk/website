@@ -1,17 +1,17 @@
 @media (prefers-color-scheme: dark) {
   body,
-  body.dark-mode {
+  body[data-theme="dark"] {
     text-align: center;
     font-family: "Space Grotesk", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 354;
+    font-weight: 350;
     font-style: normal;
     background-color: #220100;
     color: #f7e7b6;
   }
 }
 /* Manual dark mode toggle */
-body.dark-mode {
+body[data-theme="dark"] {
     background-color: #0f0430;
     color: #f7e7b6;
 }
@@ -39,7 +39,7 @@ html, body {
 /* banner sizing and positioning (responsive) */
 :root {
   /* banner size used for both banner width and container offset */
-  --banner-size: clamp(120px, 18vw, 320px);
+  --banner-size: clamp(90px, 18vw, 320px);
   --banner-offset: calc(var(--banner-size) + 1rem);
 }
 
@@ -65,16 +65,49 @@ html, body {
 
 /* Container styles */
 .container {
-    max-width: 500px;
+    max-width: 800px;
     margin: var(--banner-offset) auto 0 auto;
+    margin: clamp(80px, calc(var(--banner-size) + 1rem), 180px) auto 0 auto;
     background: rgba(255,255,255,0.85);
     border-radius: 1.5rem;
     box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-    padding: 2.5rem 2rem 2rem 2rem;
+    padding: 2rem 2rem 2rem 2rem;
     text-align: center;
     transition: background 0.3s;
 }
-body.dark-mode .container {
+.container {
+    max-width: 800px;
+    margin: clamp(80px, calc(var(--banner-size) + 1rem), 180px) auto 0 auto;
+    background: rgba(255,255,255,0.85);
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 2rem 2rem 2rem 2rem;
+    text-align: center;
+    transition: background 0.3s;
+}
+
+/* Nav bar styling */
+nav {
+    padding: 1.5em 1em 1.5em 1em;
+    max-width: 800px;
+    margin: 0 auto 1em auto;
+    background: rgba(255,255,255,0.85);
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    transition: background 0.3s;
+}
+
+/* Increase nav “button” text size */
+nav a {
+    font-size: 2rem;
+}
+
+
+body[data-theme="dark"] .container {
+    background: #271d45;
+}
+
+body[data-theme="dark"] nav {
     background: #271d45;
 }
 
@@ -134,4 +167,39 @@ a:hover {
 body.dark-mode #darkModeToggle {
     background: #f7e7b6;
     color: #220100;
+}
+/* Accessibly hide elements */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* Dark Mode Toggler */
+#theme {
+  display: grid;
+  place-content: center;
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  top: 1rem;
+  right: 1rem;
+  border: solid 2px transparent;
+  border-radius: 3px;
+}
+
+#theme:focus-within {
+  border-color: var(--colorAccentPrimary);
+}
+
+body[data-theme="dark"] #theme::before {
+  content: "\1F506";
+}
+body[data-theme="light"] #theme::before {
+  content: "\1F312";
 }
