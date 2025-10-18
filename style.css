@@ -12,8 +12,8 @@
 }
 /* Manual dark mode toggle */
 body.dark-mode {
-    background-color: #0f0430;
-    color: #f7e7b6;
+    background-color: #121212;
+    color: #e0e0e0;
 }
 body{
     text-align: center;
@@ -75,7 +75,7 @@ html, body {
     transition: background 0.3s;
 }
 body.dark-mode .container {
-    background: #271d45;
+    background: #1e1e1e;
 }
 
 /* Headings and paragraphs */
@@ -100,6 +100,9 @@ a {
 a:hover {
     color: #d43c2d;
     text-decoration: underline;
+}
+body.dark-mode a {
+    color: #90caf9;
 }
 
 /* Parrot link container */
@@ -134,4 +137,19 @@ a:hover {
 body.dark-mode #darkModeToggle {
     background: #f7e7b6;
     color: #220100;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+body.dark-mode #darkModeToggle:hover {
+    background-color: #f09900;
 }
