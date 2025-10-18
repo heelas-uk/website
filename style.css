@@ -46,8 +46,8 @@ html, body {
 .banner {
   position: fixed;
   /* use safe-area insets when available so the banner isn't hidden on devices with notches */
-  top: env(safe-area-inset-top, 6px);
-  left: env(safe-area-inset-left, 6px);
+  top: env(safe-area-inset-top, 0);
+  left: env(safe-area-inset-left, 0);
   width: var(--banner-size);
   z-index: 9999; /* sit above other UI */
   display: block;
