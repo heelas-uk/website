@@ -30,6 +30,10 @@
         </script>
     </head>
     <body data-theme="light">
+
+        <!-- Skip to main content link (first focusable element) -->
+        <a href="#main-content" class="skip-to-main-content-link">Skip to main content</a>
+
         <!-- Add banner as first child so fixed positioning is relative to the viewport -->
         <a class="banner" href="https://hackclub.com/" aria-label="Hack Club home" target="_blank" rel="noopener">
             <img src="https://assets.hackclub.com/flag-orpheus-top.svg" alt="Hack Club">
@@ -42,57 +46,58 @@
             <a href="how_to.html" aria-current="page" style="padding: 0.5em 1.5em; border-radius: 6px; text-decoration: none; font-weight: 1000;">Hackatime</a>
         </nav>
 
-        <div class="container">
+        <main id="main-content" class="container">
             <h1>Title</h1>
             <p>Description goes here.</p>
 
-        <label id="theme" for="theme_toggler" aria-label="Toggle color theme">
-            <input type="checkbox" id="theme_toggler" class="visuallyhidden">
-        </label>
-        <script>
-            const toggler = document.querySelector('#theme_toggler');
-            const media = window.matchMedia('(prefers-color-scheme: dark)');
-            
-            const getSystemTheme = () => {
-                return media.matches ? "dark" : "light";
-            }
-            
-            // Set the theme, update the UI and the cookie
-            const setTheme = (color) => {
-                setCookie('theme', color)
-                document.querySelector('body').dataset.theme = color;
-                toggler.checked = color === 'dark' ? true : false;
-                let other = color === 'dark' ? 'light' : 'dark';
-                toggler.ariaLabel = `Switch to ${other} mode`;
-            }
-            
-            // Use cookie preference if it exists; otherwise use browser preference
-            if ( getCookie('theme') ) {
-                setTheme(getCookie('theme'))
-            } else {
-                setTheme(getSystemTheme())
-            }
-            
-            // Listen for checkbox toggle
-            toggler.addEventListener('change', () => {
-                toggler.checked ? setTheme('dark') : setTheme('light');
-            });
-            // Listen for browser preference change
-            media.onchange = () => {
-                setTheme(getSystemTheme())
-            }
-        </script>
+            <label id="theme" for="theme_toggler" aria-label="Toggle color theme">
+                <input type="checkbox" id="theme_toggler" class="visuallyhidden">
+            </label>
+            <script>
+                const toggler = document.querySelector('#theme_toggler');
+                const media = window.matchMedia('(prefers-color-scheme: dark)');
+                
+                const getSystemTheme = () => {
+                    return media.matches ? "dark" : "light";
+                }
+                
+                // Set the theme, update the UI and the cookie
+                const setTheme = (color) => {
+                    setCookie('theme', color)
+                    document.querySelector('body').dataset.theme = color;
+                    toggler.checked = color === 'dark' ? true : false;
+                    let other = color === 'dark' ? 'light' : 'dark';
+                    toggler.ariaLabel = `Switch to ${other} mode`;
+                }
+                
+                // Use cookie preference if it exists; otherwise use browser preference
+                if ( getCookie('theme') ) {
+                    setTheme(getCookie('theme'))
+                } else {
+                    setTheme(getSystemTheme())
+                }
+                
+                // Listen for checkbox toggle
+                toggler.addEventListener('change', () => {
+                    toggler.checked ? setTheme('dark') : setTheme('light');
+                });
+                // Listen for browser preference change
+                media.onchange = () => {
+                    setTheme(getSystemTheme())
+                }
+            </script>
+        </main>
+
+        <footer>
+            <p style="text-align: center; font-size: 0.9em; margin-top: 2em; margin-bottom: 1em;">
+                &copy; 2025 St Augustine's Hack Club. Text, HTML, and CSS reusable under the MIT License; Hackclub branding reproduced under <a href="https://hackclub.com/brand/">License.</a>
+
+            </p>
+
+            <address style="text-align: center; margin-bottom: 1em; font-size: 0.9em;">
+                Made with ❤️ held together by Alfred Heelas, Jasmine Nash, and Ivie Clifford. <a href="mailto:21nashj@st-augustines.wilts.sch.uk; 21heelasa@st-augustines.wilts.sch.uk; 21cliffordi@st-augustines.wilts.sch.uk?subject=Hack%20Club">Email us!</a>
+            </address>
+        </footer>
+
     </body>
-
-    <footer>
-        <p style="text-align: center; font-size: 0.9em; margin-top: 2em; margin-bottom: 1em;">
-            &copy; 2025 St Augustine's Hack Club. Text, HTML, and CSS reusable under the MIT License; Hackclub branding reproduced under <a href="https://hackclub.com/brand/">License.</a>
-
-        </p>
-
-        <address style="text-align: center; margin-bottom: 1em; font-size: 0.9em;">
-            Made with ❤️ held together by Alfred Heelas, Jasmine Nash, and Ivie Clifford. <a href="mailto:21nashj@st-augustines.wilts.sch.uk; 21heelasa@st-augustines.wilts.sch.uk; 21cliffordi@st-augustines.wilts.sch.uk?subject=Hack%20Club">Email us!</a>
-        </address>
-    </footer>
-
 </html>

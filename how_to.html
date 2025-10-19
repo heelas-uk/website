@@ -30,6 +30,9 @@
         </script>
     </head>
     <body data-theme="light">
+        <!-- Skip to main content link -->
+        <a href="#main-content" class="skip-to-main-content-link">Skip to main content</a>
+
         <!-- Add banner as first child so fixed positioning is relative to the viewport -->
         <a class="banner" href="https://hackclub.com/" aria-label="Hack Club home" target="_blank" rel="noopener">
             <img src="https://assets.hackclub.com/flag-orpheus-top.svg" alt="Hack Club">
@@ -42,7 +45,8 @@
             <a href="how_to.html" aria-current="page" style="padding: 0.5em 1.5em; border-radius: 6px; text-decoration: none; font-weight: 1000;">Hackatime</a>
         </nav>
 
-        <div class="container">
+        <!-- Ensure the main landmark exists -->
+        <main id="main-content" class="container">
             <h1>How to set up Hackatime</h1>
             <p>Step 1: Log in to <a href="https://hackatime.hackclub.com/" target="_blank">hackatime.com</a> using your the email associated with your Hack Club account.</p>
             <img src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/316b72b636affb3cfea10989dfbdb5e1d1fef2aa_image.png" alt="Hackatime login screen" style="border-radius: 0%;">
@@ -60,45 +64,44 @@
             <p>Step 6: You can safely ignore points 2 and 3 of the websites guide this is becuase we have already dont it</p>
             <p>Step 7: Get coding if you upload your code to github you can earn points for the club so we can buy snacks and drinks for our next club meeting</p>
             <p>Oh and one more thing <b>fraud is bad,</b> this means <i>don't cheat the system</i> or you will be <b>banned</b> from participating in club activities and reported to the school. This is not our choice it is Hack Club's determination.</p>
+        </main>
 
-
-
-            <label id="theme" for="theme_toggler" aria-label="Toggle color theme">
-            <input type="checkbox" id="theme_toggler" class="visuallyhidden">
-            </label>
-            <script>
-            const toggler = document.querySelector('#theme_toggler');
-            const media = window.matchMedia('(prefers-color-scheme: dark)');
-            
-            const getSystemTheme = () => {
-                return media.matches ? "dark" : "light";
-            }
-            
-            // Set the theme, update the UI and the cookie
-            const setTheme = (color) => {
-                setCookie('theme', color)
-                document.querySelector('body').dataset.theme = color;
-                toggler.checked = color === 'dark' ? true : false;
-                let other = color === 'dark' ? 'light' : 'dark';
-                toggler.ariaLabel = `Switch to ${other} mode`;
-            }
-            
-            // Use cookie preference if it exists; otherwise use browser preference
-            if ( getCookie('theme') ) {
-                setTheme(getCookie('theme'))
-            } else {
-                setTheme(getSystemTheme())
-            }
-            
-            // Listen for checkbox toggle
-            toggler.addEventListener('change', () => {
-                toggler.checked ? setTheme('dark') : setTheme('light');
-            });
-            // Listen for browser preference change
-            media.onchange = () => {
-                setTheme(getSystemTheme())
-            }
-        </script>
+        <label id="theme" for="theme_toggler" aria-label="Toggle color theme">
+        <input type="checkbox" id="theme_toggler" class="visuallyhidden">
+        </label>
+        <script>
+        const toggler = document.querySelector('#theme_toggler');
+        const media = window.matchMedia('(prefers-color-scheme: dark)');
+        
+        const getSystemTheme = () => {
+            return media.matches ? "dark" : "light";
+        }
+        
+        // Set the theme, update the UI and the cookie
+        const setTheme = (color) => {
+            setCookie('theme', color)
+            document.querySelector('body').dataset.theme = color;
+            toggler.checked = color === 'dark' ? true : false;
+            let other = color === 'dark' ? 'light' : 'dark';
+            toggler.ariaLabel = `Switch to ${other} mode`;
+        }
+        
+        // Use cookie preference if it exists; otherwise use browser preference
+        if ( getCookie('theme') ) {
+            setTheme(getCookie('theme'))
+        } else {
+            setTheme(getSystemTheme())
+        }
+        
+        // Listen for checkbox toggle
+        toggler.addEventListener('change', () => {
+            toggler.checked ? setTheme('dark') : setTheme('light');
+        });
+        // Listen for browser preference change
+        media.onchange = () => {
+            setTheme(getSystemTheme())
+        }
+    </script>
     </body>
 
     <footer>

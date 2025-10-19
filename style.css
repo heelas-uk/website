@@ -10,6 +10,7 @@
     color: #f7e7b6;
   }
 }
+
 /* Manual dark mode toggle */
 body[data-theme="dark"] {
     background-color: #0f0430;
@@ -202,4 +203,20 @@ body[data-theme="dark"] #theme::before {
 }
 body[data-theme="light"] #theme::before {
   content: "\1F312";
+}
+
+.skip-to-main-content-link {
+  position: absolute; /* Positions the link absolutely on the page */
+  left: -9999px; /* Moves the link far off-screen to the left */
+  z-index: 999; /* High z-index to ensure visibility when focused */
+  padding: 1em;
+  background-color: black;
+  color: white;
+  opacity: 0; /* Invisible by default */
+}
+
+.skip-to-main-content-link:focus {
+  left: 50%; /* Centre horizontally when focused */
+  transform: translateX(-50%); /* Centre by moving back 50% of own width */
+  opacity: 1; /* Fully visible when focused */
 }

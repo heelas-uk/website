@@ -30,6 +30,9 @@
         </script>
     </head>
     <body data-theme="light">
+        <!-- Skip to main content link (must be first focusable element) -->
+        <a href="#main-content" class="skip-to-main-content-link">Skip to main content</a>
+        
         <!-- Add banner as first child so fixed positioning is relative to the viewport -->
         <a class="banner" href="https://hackclub.com/" aria-label="Hack Club home" target="_blank" rel="noopener">
             <img src="https://assets.hackclub.com/flag-orpheus-top.svg" alt="Hack Club">
@@ -42,7 +45,7 @@
             <a href="how_to.html" aria-current="page" style="padding: 0.5em 1.5em; border-radius: 6px; text-decoration: none; font-weight: 1000;">Hackatime</a>
         </nav>
 
-        <div class="container">
+        <main id="main-content" class="container">
             <h1>About Us</h1>
             <p>We are a group of Yr11 students who are working together with a goal to grow the interest of students in technology and programming especially outside of what is taught in the classroom.</p>
             <p>Our club leaders are:</p>
